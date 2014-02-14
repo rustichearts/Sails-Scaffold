@@ -1,2 +1,2 @@
-# sails0.9.4
+# sails0.9.7
 ### a Sails application
