@@ -1,2 +1,2 @@
-# sails0.9.7
+# sails0.9.8-linker
 ### a Sails application
