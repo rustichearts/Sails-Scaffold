@@ -1,2 +1,3 @@
-# sails0.9.9-linker
-### a Sails application
+# sails0.10.0-rc3
+
+a [Sails](http://sailsjs.org) application
