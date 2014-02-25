@@ -1,0 +1,27 @@
+{
+  "name": "labs.meteorworks",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "font-awesome": "~4.0.3",
+    "font-awesome-animation": "~0.0.2",
+    "bootstrap": "~3.1.1"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "js": "**/jquery.min.js"
+    },
+    "bootstrap": {
+      "js": "dist/js/bootstrap.min.js",
+      "styles": "dist/css/bootstrap.min.css",
+      "fonts": "dist/fonts/*.*"
+    },
+    "font-awesome": {
+      "styles": "css/font-awesome.min.css",
+      "fonts": "fonts/*.*"
+    },
+    "font-awesome-animation": {
+      "styles": "dist/*.min.css"
+    }
+  }
+}
