@@ -13,15 +13,15 @@
     },
     "bootstrap": {
       "js": "dist/js/bootstrap.min.js",
-      "styles": "dist/css/bootstrap.min.css",
+      "css": "dist/css/{bootstrap.min.css,bootstrap-theme.min.css}",
       "fonts": "dist/fonts/*.*"
     },
     "font-awesome": {
-      "styles": "css/font-awesome.min.css",
+      "css": "css/font-awesome.min.css",
       "fonts": "fonts/*.*"
     },
     "font-awesome-animation": {
-      "styles": "dist/*.min.css"
+      "css": "dist/*.min.css"
     }
   }
 }

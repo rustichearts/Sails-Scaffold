@@ -13,6 +13,8 @@ you can change this file to do anything you like!
 More information on using Grunt to work with static assets:
 http://gruntjs.com/configuring-tasks
 ###
+
+
 module.exports = (grunt) ->
 
   mountFolder = (connect, dir) ->
@@ -34,7 +36,6 @@ module.exports = (grunt) ->
 
   ## load all grunt-plugin tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
-
 
   ###
   CSS files to inject in order
@@ -464,11 +465,11 @@ module.exports = (grunt) ->
               proxySnippet
             ]
           livereload: LIVERELOAD_PORT
-          open:
-            target: "http://localhost:" + listen,
-            appName: "Google Chrome Canary"
-            callback: ->
-              return
+#          open:
+#            target: "http://localhost:" + listen,
+#            appName: "Google Chrome Canary"
+#            callback: ->
+#              return
 
       proxies: [
         context: "/"
@@ -480,7 +481,8 @@ module.exports = (grunt) ->
 
   # When sails is lifted in production
 
-  grunt.registerTask "server", ["external_daemon:forever", "external_daemon:redis", "configureProxies", "connect:front", "watch:dummy"]
+  grunt.registerTask "server", (target)->
+    grunt.task.run(["external_daemon:forever", "external_daemon:redis", "configureProxies", "connect:front", "watch:dummy"])
 
   # When Sails is lifted:
   grunt.registerTask "default", [
