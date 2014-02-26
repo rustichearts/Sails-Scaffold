@@ -9,7 +9,7 @@ a Sails application Mock
 `` bower i xxxxxx -S ``
 
 `` grunt bower:i``
-g
+
 ### debug
 
 `` grunt server ``
