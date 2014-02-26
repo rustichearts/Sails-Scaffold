@@ -27,7 +27,6 @@ module.exports = (grunt) ->
   ########
   LIVERELOAD_PORT = 35729
   listen = 3000
-  ssllisten = 8443
   port = process.env.PORT or 1337
   try
     config = require("./config/local")
