@@ -90,9 +90,9 @@ module.exports.express = {
  * For more information on configuration, check out:
  * http://sailsjs.org/#documentation
  */
-module.exports.cache = {
-
-	// The number of seconds to cache files being served from disk
-	// (only works in production mode)
-	maxAge: 31557600000
-};
+module.exports.express ={
+  serverOptions: {
+    key: require("fs").readFileSync( require("path").resolve( "ssl/server.key" )).toString(),
+    cert: require("fs").readFileSync( require("path").resolve( "ssl/server.crt")).toString()
+  }
+}

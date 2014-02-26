@@ -153,7 +153,6 @@ nbproject
 <<<<<<< HEAD
 =======
 
-dump.rdb
 
 ########################
 # local config
@@ -161,4 +160,14 @@ dump.rdb
 config/local.js
 
 .bower_components
+<<<<<<< HEAD
 >>>>>>> init
+=======
+
+ssl
+
+########################
+# data
+########################
+dump.rdb
+>>>>>>> Add ssl Setting
