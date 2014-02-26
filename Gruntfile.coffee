@@ -15,9 +15,6 @@ http://gruntjs.com/configuring-tasks
 ###
 module.exports = (grunt) ->
 
-  # Listen on port 35729
-  LIVERELOAD_PORT = 35729
-
   mountFolder = (connect, dir) ->
     connect.static require("path").resolve(dir)
 
@@ -26,6 +23,7 @@ module.exports = (grunt) ->
   ########
   # config
   ########
+  LIVERELOAD_PORT = 35729
   listen = 3000
   port = process.env.PORT or 1337
   try
@@ -418,7 +416,7 @@ module.exports = (grunt) ->
           livereload: true
       dummy:
         files: [
-          "dummy/"
+          "dummy"
         ]
 
     # Bower Task
@@ -465,7 +463,12 @@ module.exports = (grunt) ->
               mountFolder(connect, ".")
               proxySnippet
             ]
-          livereload: true
+          livereload: LIVERELOAD_PORT
+          open:
+            target: "http://localhost:" + listen,
+            appName: "Google Chrome Canary"
+            callback: ->
+              return
 
       proxies: [
         context: "/"
