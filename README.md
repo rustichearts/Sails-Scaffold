@@ -1,2 +1,2 @@
-# tinkle-tweets
+# Sails-Scaffold
 ### a Sails application
