@@ -4,6 +4,11 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#documentation
  */
+
+var url = require('url');
+var parsed_url  = url.parse(process.env.REDISTOGO_URL || 'http://localhost:6379');
+var parsed_auth = (parsed_url.auth || '').split(':')
+
 module.exports.express = {
 
 
@@ -68,31 +73,24 @@ module.exports.express = {
 	//
 	// Example override:
 	// methodOverride: (function customMethodOverride (req, res, next) {})()
-};
 
 
+  // Session secret is automatically generated when your new app is created
+  // Replace at your own risk in production-- you will invalidate the cookies of your users,
+  // forcing them to log in again.
+  secret: 'cc5c32beda006d19d7609e578140e2a0',
 
+  adapter: 'redis',
+  host: parsed_url.hostname ,
+  port: parsed_url.port,
+  ttl: 6000,
+  db: 0,
+  pass: parsed_auth[1],
+  prefix: 'sess:'
 
-
-/**
- * HTTP Flat-File Cache
- * 
- * These settings are for Express' static middleware- the part that serves
- * flat-files like images, css, client-side templates, favicons, etc.
- *
- * In Sails, this affects the files in your app's `assets` directory.
- * By default, Sails uses your project's Gruntfile to compile/copy those 
- * assets to `.tmp/public`, where they're accessible to Express.
- *
- * The HTTP static cache is only active in a 'production' environment, 
- * since that's the only time Express will cache flat-files.
- *
- * For more information on configuration, check out:
- * http://sailsjs.org/#documentation
- */
-module.exports.express ={
 //  serverOptions: {
 //    key: require("fs").readFileSync( require("path").resolve( "ssl/server.key" )).toString(),
 //    cert: require("fs").readFileSync( require("path").resolve( "ssl/server.crt")).toString()
 //  }
-}
+
+};
