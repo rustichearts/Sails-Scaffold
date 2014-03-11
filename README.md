@@ -10,7 +10,7 @@ a Sails application Mock
 
 `` grunt bower:i``
 
-### debug
+### debugs
 
 `` grunt server ``
 

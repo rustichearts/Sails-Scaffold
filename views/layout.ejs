@@ -7,14 +7,11 @@
   <!-- Viewport mobile tag for sensible mobile support -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
   <!--
       Stylesheets and Preprocessors
       ==============================
   -->
-  <link rel="stylesheet" href=""/>
 
-<<<<<<< HEAD
   <!--STYLES-->
   <link rel="stylesheet" href="/linker/styles/style.css">
   <!--STYLES END-->
@@ -23,20 +20,6 @@
   // for reverse-proxy
   var tag = "<script>window.sailsPort = " + Hook.config.port + "</script>" %>
   <%- tag %>
-=======
-    <%
-    // for reverse-proxy
-    var tag = "<script>window.sailsPort = " + Hook.config.port + "</script>" %>
-    <%- tag %>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/vendor/font-awesome-animation/css/font-awesome-animation.min.css"/>
-
->>>>>>> Add JST template jax-loading
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
@@ -44,7 +27,6 @@
   <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="/vendor/font-awesome-animation/css/font-awesome-animation.min.css"/>
-
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -62,7 +44,6 @@
 
 <%-blocks.header_scripts%>
 
-<<<<<<< HEAD
 <%- body %>
 
 <!--
@@ -70,10 +51,6 @@
     ========================
 -->
 
-<!--TEMPLATES-->
-<script type="text/javascript" src="/jst.js"></script>
-<!--TEMPLATES END-->
-=======
     <!--TEMPLATES-->
     <script type="text/javascript" src="/jst.js"></script>
     <!--TEMPLATES END-->
@@ -84,24 +61,16 @@
     -->
     <script src="/vendor/jquery/js/jquery.min.js"></script>
     <script src="/vendor/lodash/js/lodash.min.js"></script>
->>>>>>> Add JST template jax-loading
 
-<!--
-  Client-side Javascript
-  ========================
--->
-<script src="/vendor/jquery/js/jquery.min.js"></script>
-<script src="/vendor/lodash/js/lodash.min.js"></script>
+  <!--SCRIPTS-->
+  <script src="/linker/js/socket.io.js"></script>
+  <script src="/linker/js/sails.io.js"></script>
+  <script src="/linker/js/Socketer.js"></script>
+  <script src="/linker/js/app.js"></script>
+  <script src="/linker/js/main.js"></script>
+  <!--SCRIPTS END-->
 
-<!--SCRIPTS-->
-<script src="/linker/js/socket.io.js"></script>
-<script src="/linker/js/sails.io.js"></script>
-<script src="/linker/js/Socketer.js"></script>
-<script src="/linker/js/app.js"></script>
-<script src="/linker/js/main.js"></script>
-<!--SCRIPTS END-->
-
-<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <%-blocks.footer_scripts%>
 
