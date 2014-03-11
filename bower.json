@@ -1,0 +1,31 @@
+{
+  "name": "Sails-Scaffold",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "font-awesome": "~4.0.3",
+    "font-awesome-animation": "~0.0.2",
+    "bootstrap": "~3.1.1",
+    "lodash": "~2.4.1"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "js": "**/{jquery.min.js,jquery.min.map}"
+    },
+    "lodash":{
+      "js": "dist/lodash.min.js"
+    },
+    "bootstrap": {
+      "js": "dist/js/bootstrap.min.js",
+      "css": "dist/css/{bootstrap.min.css,bootstrap-theme.min.css}",
+      "fonts": "dist/fonts/*.*"
+    },
+    "font-awesome": {
+      "css": "css/font-awesome.min.css",
+      "fonts": "fonts/*.*"
+    },
+    "font-awesome-animation": {
+      "css": "dist/*.min.css"
+    }
+  }
+}

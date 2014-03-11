@@ -1,3 +1,17 @@
-# sails0.10.0-rc3
+# Sails-Scaffold
 
-a [Sails](http://sailsjs.org) application
+a Sails application Mock
+
+## How to
+
+### bower install
+
+`` bower i xxxxxx -S ``
+
+`` grunt bower:i``
+g
+### debug
+
+`` grunt server ``
+
+open http://localhost:3000

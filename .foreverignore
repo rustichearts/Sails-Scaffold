@@ -1,0 +1,6 @@
+**/.tmp/**
+.idea/**
+assets/**
+views/**/*.ejs
+.git/**
+.bower_components/**
