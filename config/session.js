@@ -9,7 +9,9 @@
  * For more information on configuring the session, check out:
  * http://sailsjs.org/#documentation
  */
-
+var url = require('url');
+var parsed_url  = url.parse(process.env.REDISTOGO_URL || 'http://localhost:6379');
+var parsed_auth = (parsed_url.auth || '').split(':')
 module.exports.session = {
 
   // Session secret is automatically generated when your new app is created
@@ -41,6 +43,13 @@ module.exports.session = {
   // pass: <redis auth password>
   // prefix: 'sess:'
 
+//  adapter: 'redis',
+//  host: parsed_url.hostname ,
+//  port: parsed_url.port,
+//  ttl: 6000,
+//  db: 0,
+//  pass: parsed_auth[1],
+//  prefix: 'sess:'
 
   // Uncomment the following lines to use your Mongo adapter as a session store
   // adapter: 'mongo',

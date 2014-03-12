@@ -11,6 +11,7 @@ For usage docs see:
 https://github.com/gruntjs/grunt-contrib-concat
 ###
 module.exports = (grunt) ->
+
   grunt.config.set "concat",
     js:
       src: require("../pipeline").jsFilesToInject

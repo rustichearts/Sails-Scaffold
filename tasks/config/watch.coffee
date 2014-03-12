@@ -12,19 +12,33 @@ https://github.com/gruntjs/grunt-contrib-watch
 module.exports = (grunt) ->
   grunt.config.set "watch",
     api:
-
     # API files to watch:
       files: ["api/**/*"]
 
     assets:
-
     # Assets to watch:
-      files: ["assets/**/*"]
+      files: [
+        "assets/**/*"
+      ]
 
     # When assets are changed:
       tasks: [
-        "syncAssets"
+        "compileAssets"
         "linkAssets"
+      ]
+
+    static:
+    # View files to watch:
+      files: [
+        ".tmp/public/**/*"
+        "views/**/*"
+      ]
+      options:
+        livereload: true
+
+    dummy:
+      files: [
+        "dummy"
       ]
 
   grunt.loadNpmTasks "grunt-contrib-watch"

@@ -1,13 +1,10 @@
 ###
-Compile CoffeeScript files to JavaScript.
+Compiles Stylus files.
 
 ---------------------------------------------------------------
 
-Compiles coffeeScript files from `assest/js` into Javascript and places them into
-`.tmp/public/js` directory.
-
 For usage docs see:
-https://github.com/gruntjs/grunt-contrib-coffee
+https://github.com/gruntjs/grunt-contrib-stulus
 ###
 module.exports = (grunt) ->
   grunt.config.set "stylus",
