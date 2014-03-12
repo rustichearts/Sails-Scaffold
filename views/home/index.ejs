@@ -1,0 +1,23 @@
+<div class="note">
+  Hello World
+</div>
+
+<%
+var header_scripts = (function () {/*
+<script>
+  console.log("header script")
+</script>
+*/}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
+%>
+
+<% block('header_scripts', header_scripts) -%>
+
+<%
+var footer_scripts = (function () {/*
+<script>
+  console.log("footer script")
+</script>
+*/}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
+%>
+
+<% block('footer_scripts', footer_scripts) -%>
