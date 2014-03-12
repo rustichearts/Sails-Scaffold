@@ -16,16 +16,14 @@ module.exports.sockets = {
   // mixes in socket.io events for your routes and blueprints automatically.
   onConnect: function(session, socket) {
 
-    // By default: do nothing
-    // This is a good place to subscribe a new socket to a room, inform other users that
-    // someone new has come online, or any other custom socket.io logic
+    // By default, do nothing.
+    
   },
 
   // This custom onDisconnect function will be run each time a socket disconnects
   onDisconnect: function(session, socket) {
 
-    // By default: do nothing
-    // This is a good place to broadcast a disconnect message, or any other custom socket.io logic
+    // By default: do nothing.
   },
 
 
@@ -36,10 +34,10 @@ module.exports.sockets = {
   // The flashsocket transport is disabled by default
   // You can enable flashsockets by adding 'flashsocket' to this list:
   transports: [
-    'websocket',
-    'htmlfile',
-    'xhr-polling',
-    'jsonp-polling'
+  'websocket',
+  'htmlfile',
+  'xhr-polling',
+  'jsonp-polling'
   ],
 
 
@@ -49,7 +47,7 @@ module.exports.sockets = {
   // default: memory
   adapter: 'memory',
 
-
+  
   // Node.js (and consequently Sails.js) apps scale horizontally.
   // It's a powerful, efficient approach, but it involves a tiny bit of planning.
   // At scale, you'll want to be able to copy your app onto multiple Sails.js servers
@@ -106,17 +104,17 @@ module.exports.sockets = {
   // use cases, Sails allows you to override the authorization behavior 
   // with your own custom logic by specifying a function, e.g:
   /*
-   authorization: function authorizeAttemptedSocketConnection(reqObj, cb) {
+    authorization: function authorizeAttemptedSocketConnection(reqObj, cb) {
 
-   // Any data saved in `handshake` is available in subsequent requests
-   // from this as `req.socket.handshake.*`
+        // Any data saved in `handshake` is available in subsequent requests
+        // from this as `req.socket.handshake.*`
 
-   //
-   // to allow the connection, call `cb(null, true)`
-   // to prevent the connection, call `cb(null, false)`
-   // to report an error, call `cb(err)`
-   }
-   */
+        //
+        // to allow the connection, call `cb(null, true)`
+        // to prevent the connection, call `cb(null, false)`
+        // to report an error, call `cb(err)`
+    }
+  */
   authorization: true,
 
   // Match string representing the origins that are allowed to connect to the Socket.IO server

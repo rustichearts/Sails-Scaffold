@@ -1,5 +1,16 @@
-var injectedFiles = require('../values/injectedFiles');
-
+/**
+ * Autoinsert script tags (or other filebased tags) in an html file.
+ *
+ * ---------------------------------------------------------------
+ *
+ * Automatically inject <script> tags for javascript files and <link> tags
+ * for css files.  Also automatically links an output file containing precompiled
+ * templates using a <script> tag.
+ *
+ * For usage docs see:
+ * 		https://github.com/Zolmeister/grunt-sails-linker
+ *
+ */
 module.exports = function(grunt) {
 
 	grunt.config.set('sails-linker', {
@@ -11,9 +22,9 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 			files: {
-				'.tmp/public/**/*.html': injectedFiles.jsFilesToInject,
-				'views/**/*.html': injectedFiles.jsFilesToInject,
-				'views/**/*.ejs': injectedFiles.jsFilesToInject
+				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
+				'views/**/*.html': require('../pipeline').jsFilesToInject,
+				'views/**/*.ejs': require('../pipeline').jsFilesToInject
 			}
 		},
 
@@ -26,9 +37,9 @@ module.exports = function(grunt) {
 				relative: true
 			},
 			files: {
-				'.tmp/public/**/*.html': injectedFiles.jsFilesToInject,
-				'views/**/*.html': injectedFiles.jsFilesToInject,
-				'views/**/*.ejs': injectedFiles.jsFilesToInject
+				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
+				'views/**/*.html': require('../pipeline').jsFilesToInject,
+				'views/**/*.ejs': require('../pipeline').jsFilesToInject
 			}
 		},
 
@@ -69,11 +80,10 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 
-			// injectedFiles.cssFilesToInject defined up top
 			files: {
-				'.tmp/public/**/*.html': injectedFiles.cssFilesToInject,
-				'views/**/*.html': injectedFiles.cssFilesToInject,
-				'views/**/*.ejs': injectedFiles.cssFilesToInject
+				'.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
+				'views/**/*.html': require('../pipeline').cssFilesToInject,
+				'views/**/*.ejs': require('../pipeline').cssFilesToInject
 			}
 		},
 
@@ -86,11 +96,10 @@ module.exports = function(grunt) {
 				relative: true
 			},
 
-			// injectedFiles.cssFilesToInject defined up top
 			files: {
-				'.tmp/public/**/*.html': injectedFiles.cssFilesToInject,
-				'views/**/*.html': injectedFiles.cssFilesToInject,
-				'views/**/*.ejs': injectedFiles.cssFilesToInject
+				'.tmp/public/**/*.html': require('../pipeline').cssFilesToInject,
+				'views/**/*.html': require('../pipeline').cssFilesToInject,
+				'views/**/*.ejs': require('../pipeline').cssFilesToInject
 			}
 		},
 

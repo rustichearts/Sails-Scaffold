@@ -4,12 +4,28 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#documentation
  */
-
-var url = require('url');
-var parsed_url  = url.parse(process.env.REDISTOGO_URL || 'http://localhost:6379');
-var parsed_auth = (parsed_url.auth || '').split(':')
-
 module.exports.express = {
+
+	// Completely override Express middleware loading.  
+	// If you only want to override the bodyParser, cookieParser
+	// or methodOverride middleware, see the appropriate keys below.
+	// If you only want to override one or more of the default middleware,
+	// but keep the order the same, use the `middleware` key.
+	// See the `http` hook in the Sails core for the default loading order.
+	//
+	// loadMiddleware: function( app, defaultMiddleware, sails ) { ... }
+
+
+
+
+	// Override one or more of the default middleware (besides bodyParser, cookieParser)
+	// 
+	// middleware: {
+	//    session: false, // turn off session completely for HTTP requests
+	//    404: function ( req, res, next ) { ... your custom 404 middleware ... }
+	// }
+
+
 
 
 	// The middleware function used for parsing the HTTP request body.
@@ -24,7 +40,7 @@ module.exports.express = {
 	// 
 	// If you want to change any of that, you can override the bodyParser with
 	// your own custom middleware:
-	// bodyParser: function customBodyParser (options) { ... },
+	// bodyParser: function customBodyParser (options) { ... return function(req, res, next) {...}; }
 	// 
 	// Or you can always revert back to the vanilla parser built-in to Connect/Express:
 	// bodyParser: require('express').bodyParser,
@@ -41,7 +57,7 @@ module.exports.express = {
 	//
 	// The multipart component of this parser will be replaced
 	// in a subsequent version of Sails (after v0.10, probably v0.11) with:
-	// [file-parser](https://github.com/mikermcneil/file-parser)
+	// [file-parser](https://github.com/balderdashy/file-parser)
 	// (or something comparable)
 	// 
 	// If you understand the risks of using the multipart bodyParser,
@@ -73,24 +89,31 @@ module.exports.express = {
 	//
 	// Example override:
 	// methodOverride: (function customMethodOverride (req, res, next) {})()
+};
 
 
-  // Session secret is automatically generated when your new app is created
-  // Replace at your own risk in production-- you will invalidate the cookies of your users,
-  // forcing them to log in again.
-  secret: 'cc5c32beda006d19d7609e578140e2a0',
 
-  adapter: 'redis',
-  host: parsed_url.hostname ,
-  port: parsed_url.port,
-  ttl: 6000,
-  db: 0,
-  pass: parsed_auth[1],
-  prefix: 'sess:'
 
-//  serverOptions: {
-//    key: require("fs").readFileSync( require("path").resolve( "ssl/server.key" )).toString(),
-//    cert: require("fs").readFileSync( require("path").resolve( "ssl/server.crt")).toString()
-//  }
 
+/**
+ * HTTP Flat-File Cache
+ * 
+ * These settings are for Express' static middleware- the part that serves
+ * flat-files like images, css, client-side templates, favicons, etc.
+ *
+ * In Sails, this affects the files in your app's `assets` directory.
+ * By default, Sails uses your project's Gruntfile to compile/copy those 
+ * assets to `.tmp/public`, where they're accessible to Express.
+ *
+ * The HTTP static cache is only active in a 'production' environment, 
+ * since that's the only time Express will cache flat-files.
+ *
+ * For more information on configuration, check out:
+ * http://sailsjs.org/#documentation
+ */
+module.exports.cache = {
+
+	// The number of seconds to cache files being served from disk
+	// (only works in production mode)
+	maxAge: 31557600000
 };
