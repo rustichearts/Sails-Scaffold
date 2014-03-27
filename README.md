@@ -5,7 +5,6 @@ a Sails application Mock
 ## How to
 
 ### Setup
-  install redis server
 
 ### bower install
 
