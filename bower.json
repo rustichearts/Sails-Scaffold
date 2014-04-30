@@ -2,9 +2,9 @@
   "name": "Sails-Scaffold",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "~2.0.3",
+    "jquery": "~2.1.0",
     "font-awesome": "~4.0.3",
-    "font-awesome-animation": "~0.0.2",
+    "font-awesome-animation": "~0.0.4",
     "bootstrap": "~3.1.1",
     "lodash": "~2.4.1"
   },
@@ -12,7 +12,7 @@
     "jquery": {
       "js": "**/{jquery.min.js,jquery.min.map}"
     },
-    "lodash":{
+    "lodash": {
       "js": "dist/lodash.min.js"
     },
     "bootstrap": {

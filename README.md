@@ -5,7 +5,10 @@ a Sails application Mock
 ## How to
 
 ### Setup
+
   install redis server
+
+`` npm i forever -g ``
 
 ### bower install
 
@@ -15,8 +18,6 @@ a Sails application Mock
 
 ### debugs
 
-`` npm i forever -g ``
-
-`` grunt server ``
+`` grunt serv ``
 
 open http://localhost:3000
