@@ -41,5 +41,4 @@ module.exports = (grunt) ->
         "dummy"
       ]
 
-  grunt.loadNpmTasks "grunt-contrib-watch"
   return

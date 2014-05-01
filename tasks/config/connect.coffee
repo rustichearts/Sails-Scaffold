@@ -49,7 +49,4 @@ module.exports = (grunt) ->
       changeOrigin: false
     ]
 
-  grunt.loadNpmTasks "grunt-contrib-connect"
-  grunt.loadNpmTasks "grunt-connect-proxy"
-
   return

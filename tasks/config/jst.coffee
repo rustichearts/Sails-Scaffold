@@ -31,5 +31,4 @@ module.exports = (grunt) ->
       # 'relative/path/from/gruntfile/to/compiled/template/destination'  : ['relative/path/to/sourcefiles/**/*.html']
         ".tmp/public/jst.js": require("../pipeline").templateFilesToInject
 
-  grunt.loadNpmTasks "grunt-contrib-jst"
   return

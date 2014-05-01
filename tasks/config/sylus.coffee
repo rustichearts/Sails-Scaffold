@@ -28,5 +28,4 @@ module.exports = (grunt) ->
         }
       ]
 
-  grunt.loadNpmTasks "grunt-contrib-stylus"
   return

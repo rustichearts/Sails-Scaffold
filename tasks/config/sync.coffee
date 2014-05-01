@@ -19,5 +19,4 @@ module.exports = (grunt) ->
         dest: ".tmp/public"
       ]
 
-  grunt.loadNpmTasks "grunt-sync"
   return

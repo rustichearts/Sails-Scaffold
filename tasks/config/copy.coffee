@@ -31,5 +31,4 @@ module.exports = (grunt) ->
         dest: "www"
       ]
 
-  grunt.loadNpmTasks "grunt-contrib-copy"
   return

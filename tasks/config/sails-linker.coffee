@@ -126,5 +126,4 @@ module.exports = (grunt) ->
         "views/**/*.html": [".tmp/public/jst.js"]
         "views/**/*.ejs": [".tmp/public/jst.js"]
 
-  grunt.loadNpmTasks "grunt-sails-linker"
   return

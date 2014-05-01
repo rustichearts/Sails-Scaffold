@@ -21,5 +21,4 @@ module.exports = (grunt) ->
         ext: ".css"
       ]
 
-  grunt.loadNpmTasks "grunt-contrib-less"
   return

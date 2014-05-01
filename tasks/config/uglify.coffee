@@ -14,5 +14,4 @@ module.exports = (grunt) ->
       src: [".tmp/public/concat/production.js"]
       dest: ".tmp/public/min/production.js"
 
-  grunt.loadNpmTasks "grunt-contrib-uglify"
   return

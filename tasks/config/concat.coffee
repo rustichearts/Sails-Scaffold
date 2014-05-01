@@ -21,5 +21,4 @@ module.exports = (grunt) ->
       src: require("../pipeline").cssFilesToInject
       dest: ".tmp/public/concat/production.css"
 
-  grunt.loadNpmTasks "grunt-contrib-concat"
   return

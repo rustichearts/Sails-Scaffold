@@ -18,5 +18,4 @@ module.exports = (grunt) ->
       options:
         verbose: true
 
-  grunt.loadNpmTasks "grunt-external-daemon"
   return

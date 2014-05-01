@@ -24,5 +24,4 @@ module.exports = (grunt) ->
       options:
         cleanBowerDir: true
 
-  grunt.loadNpmTasks "grunt-bower-task"
   return
