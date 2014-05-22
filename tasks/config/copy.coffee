@@ -19,7 +19,7 @@ module.exports = (grunt) ->
       files: [
         expand: true
         cwd: "./assets"
-        src: ["**/*.!(coffee|less|styl|sass|scss)"]
+        src: ["**/*.!(less|styl|sass|scss)"]
         dest: ".tmp/public"
       ]
 

@@ -98,7 +98,7 @@ do(w=window,d=document) ->
         if( socket.socket.isClosed )
           socket.socket.open()
         socket.socket.connect(connect)
-        return @self
+        return socket
 
       if room == ""
         socket = @io.connect( undefined, @self.details )
@@ -119,14 +119,14 @@ do(w=window,d=document) ->
             disconnect( io.sockets, socket )
           ,1)
 
-      return @self
+      return socket
 
     unbind: (room="") ->
 
       socket = @self.getSocket(room)
       if( socket )
         socket.disconnect()
-      return @self
+      return socket
 
   ## end class Socketer
 

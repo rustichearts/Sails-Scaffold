@@ -15,7 +15,7 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  '_linker/styles/**/*.css'
+  "/styles/**/*.css"
 ];
 
 
@@ -25,24 +25,27 @@ var jsFilesToInject = [
 
   // Dependencies like sails.io.js, jQuery, or Angular
   // are brought in here
-  'js/dependencies/**/*.js',
-
-
-  // finally, include a simple boilerplate script that connects a socket
-  // to the Sails backend with some example code
-  '_linker/js/connection.example.js',
+  'js/dependencies/*.js',
 
   //
   // *->    you might put other dependencies like jQuery or Angular here   <-*
   //
   "vendor/jquery/js/jquery.min.js",
 
+  "vendor/lodash/js/*.js",
+
+  "vendor/vue/js/*.js",
+
+  'js/dependencies/jquery/**/*.js',
+
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  "_linker/js/app.js",
+  "js/app.js",
 
   // All of the rest of your app scripts
-  "_linker/**/*.js",
+  "js/*.js",
+
+  "js/pageloader/**/*.js"
 
 ];
 
@@ -57,7 +60,7 @@ var jsFilesToInject = [
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-  '_linker/templates/**/*.html'
+  'templates/**/*.html'
 ];
 
 

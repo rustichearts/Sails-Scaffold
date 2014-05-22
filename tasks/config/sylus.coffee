@@ -15,16 +15,9 @@ module.exports = (grunt) ->
         {
           expand: true,
           cwd: 'assets/styles/',
-          src: ['**/*.styl'],
+          src: ['*.styl'],
           dest: '.tmp/public/styles/',
           ext: '.css'
-        }
-        {
-          expand: true
-          cwd: "assets/_linker/styles/"
-          src: ["**/*.styl"]
-          dest: ".tmp/public/_linker/styles/"
-          ext: ".css"
         }
       ]
 

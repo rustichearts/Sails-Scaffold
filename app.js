@@ -18,7 +18,7 @@
  * `node app.js --silent --port=80 --prod`
  */
 
-require("./node_modules/grunt-contrib-coffee/node_modules/coffee-script");
+require("coffee-script/register");
 
 // Ensure a "sails" can be located:
 var sails;

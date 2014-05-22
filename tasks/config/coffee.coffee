@@ -25,13 +25,6 @@ module.exports = (grunt) ->
           dest: ".tmp/public/js/"
           ext: ".js"
         }
-        {
-          expand: true
-          cwd: "assets/_linker/js/"
-          src: ["**/*.coffee"]
-          dest: ".tmp/public/_linker/js/"
-          ext: ".js"
-        }
       ]
 
   return

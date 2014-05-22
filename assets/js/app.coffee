@@ -45,5 +45,9 @@ do ( d=document, w=window, io=io, port = sailsPort ) ->
 
     # ///////////////////////////////////////////////////////////
 
-  socketer.bind( "/counter", (socekt)->
-  )
+  socketer.bind "/counter", (appSocket, socket)->
+
+    socket.on "connected", (data)->
+      log data
+    console.log "/counter"
+

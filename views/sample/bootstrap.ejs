@@ -350,6 +350,8 @@ var header_scripts = (function () {/*
 var footer_scripts = (function () {/*
 <script>
   console.log("footer script");
+
+  new window.pageloader.index();
 </script>
 */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
 %>

@@ -13,6 +13,9 @@ module.exports = {
 
   port: process.env.PORT || 80,
 
-  environment: process.env.NODE_ENV || 'production'
+  environment: process.env.NODE_ENV || 'production',
 
+  facebook: {
+    appId: "111111"
+  }
 };
