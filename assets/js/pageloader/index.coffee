@@ -1,7 +1,7 @@
 do(w=window,d=document,$=jQuery)->
 
-  pageloader = w.pageloader = w.pageloader || {}
-  if pageloader.index
+  w.pageloader = w.pageloader || {}
+  if w.pageloader.index
     return
 
   # log output
@@ -9,34 +9,40 @@ do(w=window,d=document,$=jQuery)->
     if (typeof console isnt 'undefined')
       console.log.apply(console, arguments);
 
-  io=window.io
-  port=window.sailsPort
-
-  # for reverse proxy
-  details = if port then { port: port } else undefined
-
-  # Socket.io events binding Class
-  socketer = new Socketer( io, details )
-  indexSocket = socketer.bind "/index", ( appSocket, socket ) ->
-    log "index room connect"
-
-    socket.on "connected", (data)->
-      log data
-  log indexSocket
-
   class Loader
+    io=window.io
+    self = null
+    socketer = null
+    pageSocket = null
 
     constructor: ->
-      return
+      self = this
+      # for reverse proxy
+      port=window.sailsPort
+      details = if port then { port: port } else undefined
+
+      # Socket.io events binding Class
+      socketer = new Socketer( io, details )
+      pageSocket = socketer.bind "/index", ( appSocket, socket ) ->
+        log "index room connect"
+
+        socket.on "connected", (data)->
+          log data
+      , ->
+        log "disconnect"
+
+      log pageSocket
 
     ready: ->
       setTimeout ->
-        indexSocket.emit "load", "loaded"
-      , 2000
+        pageSocket.emit "load", "page loaded"
+      , 1000
+
+    destroy: ->
+      socketer.unbind("/index")
       return
 
-
-  pageloader.index = ->
+  w.pageloader.index = ->
     loader = new Loader()
     $ loader.ready
     return loader

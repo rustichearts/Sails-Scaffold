@@ -342,18 +342,12 @@ var header_scripts = (function () {/*
   console.log("header script")
 </script>
 */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
-%>
-
-<% block('header_scripts', header_scripts) -%>
+%><% block('header_scripts', header_scripts) -%>
 
 <%
 var footer_scripts = (function () {/*
 <script>
   console.log("footer script");
-
-  new window.pageloader.index();
 </script>
 */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
-%>
-
-<% block('footer_scripts', footer_scripts) -%>
+%><% block('footer_scripts', footer_scripts) -%>

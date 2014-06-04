@@ -45,9 +45,9 @@ module.exports = (grunt) ->
         appRoot: ".tmp/public"
 
       files:
-        ".tmp/public/**/*.html": [".tmp/public/min/production.js"]
-        "views/**/*.html": [".tmp/public/min/production.js"]
-        "views/**/*.ejs": [".tmp/public/min/production.js"]
+        ".tmp/public/**/*.html": [".tmp/public/min/production.min.js"]
+        "views/**/*.html": [".tmp/public/min/production.min.js"]
+        "views/**/*.ejs": [".tmp/public/min/production.min.js"]
 
     prodJsRelative:
       options:
@@ -58,9 +58,9 @@ module.exports = (grunt) ->
         relative: true
 
       files:
-        ".tmp/public/**/*.html": [".tmp/public/min/production.js"]
-        "views/**/*.html": [".tmp/public/min/production.js"]
-        "views/**/*.ejs": [".tmp/public/min/production.js"]
+        ".tmp/public/**/*.html": [".tmp/public/min/production.min.js"]
+        "views/**/*.html": [".tmp/public/min/production.min.js"]
+        "views/**/*.ejs": [".tmp/public/min/production.min.js"]
 
     devStyles:
       options:
@@ -95,9 +95,9 @@ module.exports = (grunt) ->
         appRoot: ".tmp/public"
 
       files:
-        ".tmp/public/index.html": [".tmp/public/min/production.css"]
-        "views/**/*.html": [".tmp/public/min/production.css"]
-        "views/**/*.ejs": [".tmp/public/min/production.css"]
+        ".tmp/public/index.html": [".tmp/public/min/production.min.css"]
+        "views/**/*.html": [".tmp/public/min/production.min.css"]
+        "views/**/*.ejs": [".tmp/public/min/production.min.css"]
 
     prodStylesRelative:
       options:
@@ -108,9 +108,9 @@ module.exports = (grunt) ->
         relative: true
 
       files:
-        ".tmp/public/index.html": [".tmp/public/min/production.css"]
-        "views/**/*.html": [".tmp/public/min/production.css"]
-        "views/**/*.ejs": [".tmp/public/min/production.css"]
+        ".tmp/public/index.html": [".tmp/public/min/production.min.css"]
+        "views/**/*.html": [".tmp/public/min/production.min.css"]
+        "views/**/*.ejs": [".tmp/public/min/production.min.css"]
 
 
   # Bring in JST template object

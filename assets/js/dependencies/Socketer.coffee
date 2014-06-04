@@ -49,7 +49,7 @@ do(w=window,d=document) ->
       sockets = @io.sockets[@domain]
       return if sockets then sockets.namespaces[room] else undefined
 
-    # For PJAX to volatilize unnecessary Socket in a single page
+#    # For PJAX to volatilize unnecessary Socket in a single page
 #    once: ( room, connect, rebind = true ) ->
 #
 #      if ( _is( "Function", room ) )
@@ -131,8 +131,5 @@ do(w=window,d=document) ->
   ## end class Socketer
 
   instance = null
-  w.Socketer = (io, details) ->
-    if ( instance )
-      instance
-    else
-      instance = new Socketer(io, details)
+  w.Socketer = ( io, details )->
+    instance ?= new Socketer( io, details )

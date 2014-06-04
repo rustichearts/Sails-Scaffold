@@ -1,32 +1,32 @@
 /**
- * Session
- * 
- * Sails session integration leans heavily on the great work already done by Express, but also unifies 
- * Socket.io with the Connect session store. It uses Connect's cookie parser to normalize configuration
- * differences between Express and Socket.io and hooks into Sails' middleware interpreter to allow you
- * to access and auto-save to `req.session` with Socket.io the same way you would with Express.
+ * Session Configuration
+ * (sails.config.session)
+ *
+ * Sails session integration leans heavily on the great work already done by
+ * Express, but also unifies Socket.io with the Connect session store. It uses
+ * Connect's cookie parser to normalize configuration differences between Express
+ * and Socket.io and hooks into Sails' middleware interpreter to allow you to access
+ * and auto-save to `req.session` with Socket.io the same way you would with Express.
  *
  * For more information on configuring the session, check out:
- * http://sailsjs.org/#documentation
+ * http://links.sailsjs.org/docs/config/session
  */
-var url = require('url');
-var parsed_url  = url.parse(process.env.REDISTOGO_URL || 'http://localhost:6379');
-var parsed_auth = (parsed_url.auth || '').split(':')
+
 module.exports.session = {
 
   // Session secret is automatically generated when your new app is created
   // Replace at your own risk in production-- you will invalidate the cookies of your users,
-  // forcing them to log in again. 
-  secret: '37cbe949ea7d8572a902ca2bcd998467',
+  // forcing them to log in again.
+  secret: '47c41f65d4e0ae02d4c1044e52ae61e0',
 
 
   // Set the session cookie expire time
   // The maxAge is set by milliseconds, the example below is for 24 hours
   //
   // cookie: {
-  //   maxAge: 24 * 60 * 60 * 1000  
+  //   maxAge: 24 * 60 * 60 * 1000
   // }
-  
+
 
   // In production, uncomment the following lines to set up a shared redis session store
   // that can be shared across multiple Sails.js servers
@@ -43,13 +43,6 @@ module.exports.session = {
   // pass: <redis auth password>
   // prefix: 'sess:'
 
-//  adapter: 'redis',
-//  host: parsed_url.hostname ,
-//  port: parsed_url.port,
-//  ttl: 6000,
-//  db: 0,
-//  pass: parsed_auth[1],
-//  prefix: 'sess:'
 
   // Uncomment the following lines to use your Mongo adapter as a session store
   // adapter: 'mongo',

@@ -32,20 +32,21 @@ var jsFilesToInject = [
   //
   "vendor/jquery/js/jquery.min.js",
 
-  "vendor/lodash/js/*.js",
+  "vendor/lodash/js/lodash.min.js",
 
-  "vendor/vue/js/*.js",
+//  "vendor/vue/js/*.js",
 
   'js/dependencies/jquery/**/*.js',
 
-  // All of the rest of your client-side js files
-  // will be injected here in no particular order.
   "js/app.js",
 
-  // All of the rest of your app scripts
   "js/*.js",
 
-  "js/pageloader/**/*.js"
+  "js/pageloader/**/*.js",
+
+  "vendor/kazitori.js/kazitori.js",
+
+  "js/routing/route.js"
 
 ];
 
@@ -62,11 +63,6 @@ var jsFilesToInject = [
 var templateFilesToInject = [
   'templates/**/*.html'
 ];
-
-
-
-
-
 
 
 

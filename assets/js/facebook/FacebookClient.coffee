@@ -13,10 +13,12 @@ do(w=window,d=document,appId=window.appId) ->
 
   ## WebSocket room implements
   class FacebookClient
-    FB: null
-    loadedCallback: ->
+    subscribe = {}
+    loadedCallback = ->
       log "FaceBook SDK loaded..."
-      return
+
+
+    FB: null
     constructor: () ->
       self = @
 
@@ -28,9 +30,21 @@ do(w=window,d=document,appId=window.appId) ->
           appId: appId
           status: true
           xfbml: true
+          cookie: true
 
-        if _is("Function", self.loadedCallback )
-          self.loadedCallback()
+        loadedCallback()
+        if subscribe["loaded"]
+          for c in subscribe["loaded"]
+            c(FB)
+
+    subscribe: (event, cb) ->
+
+      if ( ! _is("String", event ) or ! _is("Function", cb ) )
+        return
+
+      if subscribe[event] == undefined
+        subscribe[event] = new Array()
+      subscribe[event].push(cb)
 
     load: (cb)->
 
@@ -55,10 +69,28 @@ do(w=window,d=document,appId=window.appId) ->
     isLoadedSDK: ->
       return @.FB is not null
 
+    callbacks: (cb=(->)) ->
+      if !(_is "Function",cb)
+        cb = (->)
+
+      setTimeout ->
+        @FB.ui
+          method: "oauth"
+          client_id: window.appId
+          api_key: window.appId
+          app_id: window.appId
+          fbconnect: "1"
+          response_type: "code token"
+          perms: "user_friends,user_events,friends_events"
+          scope: "user_friends,user_events,friends_events"
+          display: "iframe"
+          , cb
+      , 10
+
     getLoginStatus: (cb={}) ->
 
-      if !(_is "Function", cb.connect)
-        cb.connect = (r)->
+      if !(_is "Function", cb.connected)
+        cb.connected = (r)->
           log "coonnected"
       if !(_is "Function", cb.not_authorized)
         cb.not_authorized = (r)->
@@ -76,12 +108,10 @@ do(w=window,d=document,appId=window.appId) ->
         else if (response.status == "not_authorized")
           cb.not_authorized(response)
         else
+          log response
           cb.not_login(response)
 
-  do ->
+
     instance = null
     w.FacebookClient = ->
-      if ( instance )
-        instance
-      else
-        instance = new FacebookClient()
+      instance ?= new FacebookClient()

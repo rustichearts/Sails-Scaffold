@@ -1,4 +1,4 @@
-do ( d=document, w=window, io=io, port = sailsPort ) ->
+do ( d=document, w=window, io=io, port=sailsPort ) ->
 
   # log output
   log = ->
@@ -22,7 +22,6 @@ do ( d=document, w=window, io=io, port = sailsPort ) ->
       # ///////////////////////////////////////////////////////////
       if( data.status == "OK" )
         log( 'New comet message received :: ', data )
-      return
 
     # //////////////////////////////////////////////////////
 
@@ -41,13 +40,12 @@ do ( d=document, w=window, io=io, port = sailsPort ) ->
       '`socket.get("/", function (response) ' +
       '{ console.log(response); })`'
     )
-    return
 
     # ///////////////////////////////////////////////////////////
 
   socketer.bind "/counter", (appSocket, socket)->
 
     socket.on "connected", (data)->
+      console.log "/counter connected"
       log data
-    console.log "/counter"
 
