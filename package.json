@@ -2,7 +2,7 @@
   "name": "Sails-Scaffold",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application v0.10.0-rc6",
+  "description": "a Sails application for v0.10.0-rc6",
   "keywords": [],
   "dependencies": {
     "sails": "~0.10.0-rc6",
@@ -31,7 +31,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kamiya/Sails-Scaffold.git"
+    "url": "git://github.com/rustichearts/Sails-Scaffold.git"
   },
   "author": "kamiyam",
   "devDependencies": {
