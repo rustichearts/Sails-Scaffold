@@ -34,7 +34,7 @@
     "type": "git",
     "url": "git://github.com/rustichearts/Sails-Scaffold.git"
   },
-  "author": "kamiyam",
+  "author": "k5m",
   "devDependencies": {
     "grunt-bower-task": "^0.3.4",
     "grunt-external-daemon": "^1.1.0",

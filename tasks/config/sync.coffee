@@ -15,7 +15,7 @@ module.exports = (grunt) ->
     dev:
       files: [
         cwd: "./assets"
-        src: ["**/*.!(map|coffee|less|styl|sass|scss)"]
+        src: ["**/*.!(coffee|map|less|styl|sass|scss)"]
         dest: ".tmp/public"
       ]
 

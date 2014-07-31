@@ -17,5 +17,9 @@ module.exports = (grunt) ->
       args: ["-w","app.js"]
       options:
         verbose: true
+    grunt:
+      cmd: "grunt"
+      options:
+        verbose: true
 
   return

@@ -15,26 +15,77 @@ module.exports = (grunt) ->
     # API files to watch:
       files: ["api/**/*"]
 
-    assets:
-    # Assets to watch:
+    coffee:
       files: [
-        "assets/**/*"
+        "assets/js/**/*.coffee"
       ]
-
-    # When assets are changed:
       tasks: [
-        "compileAssets"
-        "linkAssets"
+        "coffee:dev"
+        "sails-linker:devJs"
       ]
 
-    static:
+    template:
+      files: [
+        "assets/templates/**/*.html"
+      ]
+      tasks: [
+        "jst:dev"
+        "sails-linker:devTpl"
+      ]
+
+    less:
+      files: [
+        "assets/styles/**/*.less"
+      ]
+      tasks: [
+        "less:dev"
+        "sails-linker:devStyles"
+      ]
+
+    stylus:
+      files: [
+        "assets/styles/**/*.styl"
+      ]
+      tasks: [
+        "stylus:dev"
+        "sails-linker:devStyles"
+      ]
+
+    view:
     # View files to watch:
       files: [
-        ".tmp/public/**/*"
         "views/**/*"
       ]
       options:
         livereload: true
+
+    static1:
+      files: [
+        "assets/**/*.!(coffee|map|less|styl|sass|scss)"
+      ]
+      tasks: [
+        "sync:dev"
+      ]
+
+    static2:
+      files: [
+        ".tmp/public/**/*.!(coffee|map|less|styl|sass|scss)"
+      ]
+      options:
+        livereload: true
+
+#    assets:
+#    # Assets to watch:
+#      files: [
+#        "assets/**/*"
+#      ]
+#
+#    # When assets are changed:
+#      tasks: [
+#        "compileAssets"
+#        "linkAssets"
+#      ]
+#
 
     dummy:
       files: [

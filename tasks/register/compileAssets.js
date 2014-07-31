@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 		'jst:dev',
 		'less:dev',
     'stylus:dev',
-		'copy:dev',
-		'coffee:dev'
+    'coffee:dev',
+    'sync:dev'
 	]);
 };
