@@ -1,4 +1,4 @@
-**/.tmp/**
+.tmp/**
 assets/**
 views/**/*.ejs
 

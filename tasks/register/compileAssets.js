@@ -5,6 +5,6 @@ module.exports = function (grunt) {
 		'less:dev',
     'stylus:dev',
     'coffee:dev',
-    'sync:dev'
+    'copy:dev'
 	]);
 };

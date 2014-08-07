@@ -15,7 +15,7 @@ module.exports = (grunt) ->
         {
           expand: true,
           cwd: 'assets/styles/',
-          src: ['*.styl'],
+          src: ['imports.styl'],
           dest: '.tmp/public/styles/',
           ext: '.css'
         }

@@ -72,7 +72,6 @@ bower_components
 
 
 
-
 ################################################
 # Sails.js / Waterline / Grunt
 #
@@ -81,6 +80,7 @@ bower_components
 ################################################
 .tmp
 dump.rdb
+
 
 
 
@@ -115,6 +115,7 @@ npm-debug.log
 .netbeans
 nbproject
 .idea
+.node_history
 
 .bower_components
 
