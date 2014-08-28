@@ -15,6 +15,7 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
+  'vendor/**/*.css',
   'styles/**/*.css'
 ];
 
@@ -22,7 +23,6 @@ var cssFilesToInject = [
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
-  
   // Dependencies like sails.io.js, jQuery, or Angular
   // are brought in here
   'js/dependencies/*.js',
@@ -32,11 +32,11 @@ var jsFilesToInject = [
   //
   "vendor/jquery/js/jquery.min.js",
 
-  "vendor/lodash/js/lodash.min.js",
+  "vendor/lodash/**/*.js",
 
 //  "vendor/vue/js/*.js",
 
-  'js/dependencies/jquery/**/*.js',
+  'js/dependencies/jquery-plugins/**/*.js',
 
   "js/app.js",
 
