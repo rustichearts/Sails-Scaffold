@@ -1,9 +1,14 @@
+.git*
+.git/**
+
 .tmp/**
 assets/**
-views/**/*.ejs
+tasks/**
+views/**
 
 .idea/**
 
-.git/**
-
 .bower_components/**
+bower_components/**
+
+dump.rdb
