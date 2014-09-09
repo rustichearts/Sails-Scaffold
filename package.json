@@ -27,7 +27,7 @@
     "gulp-uglify": "^0.3.1",
     "gulp-util": "3.0.0",
     "run-sequence": "^0.3.6",
-    "sails": "~0.10.4",
+    "sails": "~0.10.5",
     "sails-disk": "~0.10.0",
     "rc": "~0.5.0",
     "include-all": "~0.1.3",
