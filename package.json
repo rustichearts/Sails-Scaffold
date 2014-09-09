@@ -22,7 +22,6 @@
     "gulp-minify-css": "^0.3.7",
     "gulp-notify": "^1.4.2",
     "gulp-rename": "^1.2.0",
-    "gulp-rimraf": "~0.1.0",
     "gulp-sass": "0.7.2",
     "gulp-template-compile": "^0.2.0",
     "gulp-uglify": "^0.3.1",
@@ -36,7 +35,8 @@
     "gulp-jst": "0.1.1",
     "gulp-stylus": "~1.3.0",
     "coffee-script": "~1.7.1",
-    "nib": "~1.0.3"
+    "nib": "~1.0.3",
+    "del": "~0.1.2"
   },
   "name": "Sails-Scaffold",
   "private": true,
