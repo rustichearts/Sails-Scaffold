@@ -7,7 +7,12 @@
     "font-awesome-animation": "~0.0.5",
     "bootstrap": "~3.2.0",
     "lodash": "~2.4.1",
-    "kazitori.js": "~1.0.3"
+    "kazitori.js": "~1.0.3",
+    "angular": "~1.2.26",
+    "angular-animate": "~1.2.26",
+    "angular-cookies": "~1.2.26",
+    "angular-bootstrap": "~0.11.2",
+    "angular-route": "~1.2.26"
   },
   "exportsOverride": {
     "jquery": {
@@ -27,6 +32,22 @@
     },
     "font-awesome-animation": {
       "css": "dist/*.min.css"
+    },
+
+    "angular": {
+      "js": "angular.min.{js,js.map}"
+    },
+    "angular-animate": {
+      "js": "angular-animate.js"
+    },
+    "angular-bootstrap": {
+      "js": "ui-bootstrap-tpls.js"
+    },
+    "angular-cookies": {
+      "js": "angular-cookies.min.{js,js.map}"
+    },
+    "angular-route": {
+      "js": "angular-route.min.{js,js.map}"
     }
   }
 }

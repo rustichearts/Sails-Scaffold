@@ -50,10 +50,10 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kamiya/Sails-Scaffold.git"
+    "url": ""
   },
-  "author": "kamiya",
-  "license": "",
+  "author": "k5m",
+  "license": "MIT",
   "devDependencies": {
     "sails-generate-frontend-gulp": "0.0.9",
     "sails-generate-new-gulp": "git://github.com/kamiyam/sails-generate-new-gulp.git",

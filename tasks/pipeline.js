@@ -27,14 +27,19 @@ var jsFilesToInject = [
   // are brought in here
   'js/dependencies/*.js',
 
+  "vendor/lodash/**/*.js",
+
   //
   // *->    you might put other dependencies like jQuery or Angular here   <-*
   //
+
   "vendor/jquery/js/jquery.min.js",
 
-  "vendor/lodash/**/*.js",
+  "vendor/angular/js/angular*.js",
 
-//  "vendor/vue/js/*.js",
+  "vendor/angular-bootstrap/js/ui-bootstrap-tpls.js",
+
+  "vendor/angular-*/js/angular-*.js",
 
   'js/dependencies/jquery-plugins/**/*.js',
 
@@ -42,9 +47,11 @@ var jsFilesToInject = [
 
   "js/*.js",
 
-  "js/pageloader/**/*.js",
+  // on every page Script Loading for pjax
 
   "vendor/kazitori.js/kazitori.js",
+
+  "js/routing/pageloader/**/*.js",
 
   "js/routing/route.js"
 ];

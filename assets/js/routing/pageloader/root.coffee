@@ -1,7 +1,7 @@
 do(w=window,d=document,$=jQuery)->
 
   w.pageloader = w.pageloader || {}
-  if w.pageloader.index
+  if w.pageloader.root
     return
 
   # log output
@@ -42,7 +42,7 @@ do(w=window,d=document,$=jQuery)->
       socketer.unbind("/index")
       return
 
-  w.pageloader.index = ->
+  w.pageloader.root = ->
     loader = new Loader()
     $ loader.ready
     return loader

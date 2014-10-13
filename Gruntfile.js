@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 			options: {
 			    targetDir: './assets/vendor',
 			    layout: "byComponent",
-			    verbose: false,
+			    verbose: true,
 			    install: true,
 			    cleanTargetDir: true,
 			    bowerOptions: {}

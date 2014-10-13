@@ -8,7 +8,7 @@
  */
 module.exports = function(gulp, plugins, growl) {
 
-	gulp.task('cssmin:dist', function() {
+	gulp.task('cssmin', function() {
 		return gulp.src('.tmp/public/concat/production.css')
 				.pipe(plugins.rename({ suffix: '.min' }))
 				.pipe(plugins.minifyCss())

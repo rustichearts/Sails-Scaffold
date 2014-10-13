@@ -8,7 +8,6 @@ views/**
 
 .idea/**
 
-.bower_components/**
-bower_components/**
+*bower_components/**
 
 dump.rdb

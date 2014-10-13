@@ -12,10 +12,12 @@
 
 module.exports = {
 
-  appName: "Sails Application",
-  	
+  port: process.env.PORT || 1337,
+
+  environment: process.env.NODE_ENV || 'development',
+
   facebook: {
-    appId: "111111"
+    appId: "123456789"
   }
 
   /***************************************************************************

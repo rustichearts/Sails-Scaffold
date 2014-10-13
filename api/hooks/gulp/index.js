@@ -4,6 +4,7 @@
  */
 
 module.exports = function (sails) {
+
   /**
    * Module dependencies
    */
