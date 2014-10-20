@@ -15,7 +15,7 @@ module.exports = function(gulp, plugins, growl) {
 				.pipe(plugins.jshint.reporter('default'))
 				.pipe(plugins.concat('production.js'))
 				.pipe(plugins.rename({ suffix: '.min' }))
-				.pipe(plugins.uglify(/* {mangle: true} */))
+				.pipe(plugins.uglify({mangle: true}))
 				.pipe(gulp.dest('./.tmp/public/concat'))
 				.pipe(plugins.if(growl, plugins.notify({ message: 'Concatenate Scripts task complete' })));
 	});

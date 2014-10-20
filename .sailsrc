@@ -1,5 +1,10 @@
 {
   "generators": {
-    "modules": {}
-  }
+      "modules": {
+      	"new": "sails-generate-new-gulp",
+        "frontend": "sails-generate-frontend-gulp",
+        "gruntfile": "sails-generate-gulpfile",
+        "bower": "sails-generate-bower-gulp"
+      }
+ }
 }
