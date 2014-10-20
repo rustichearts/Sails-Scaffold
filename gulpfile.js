@@ -71,9 +71,6 @@ var gulp = require('gulp'),
 		}
 	}
 
-
-
-
 	// Load task functions
 	var taskConfigurations = loadTasks('./tasks/config'),
 		registerDefinitions = loadTasks('./tasks/register');
