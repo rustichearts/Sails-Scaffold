@@ -1,83 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApps">
   <head>
-    <title>New Sails App</title>
+    <title><%= title %></title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <meta name="csrf-token" content="<%= _csrf %>" >
 
-    <% // for reverse-proxy
-      var tag1 = "<script>window.sailsPort = " + sails.config.port + "</script>" %>
+    <% //for reverse-proxy
+    var tag1 = "<script>window.sailsPort = " + sails.config.port + "</script>"; %>
     <%- tag1 %>
 
     <% // FaceBook App
-      var tag2 = "<script>window.appId = " + sails.config.facebook.appId + "</script>" %>
+    var tag2 = "<script>window.appId = " + sails.config.facebook.appId + "</script>";%>
     <%- tag2 %>
+
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="/favicon.ico">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    <!--  
-        Stylesheets and Preprocessors
-        ============================== -->
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/vendor/font-awesome-animation/css/font-awesome-animation.min.css"/>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,800' rel='stylesheet' type='text/css'>
 
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="/vendor/normalize.css/normalize.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/font-awesome-animation/styles/font-awesome-animation.min.css">
+
+    <!-- ==============================
+    Stylesheets and Preprocessors
+    ============================== -->
     <!--STYLES-->
+    <link rel="stylesheet" href="/vendor/font-awesome-animation/styles/font-awesome-animation.min.css">
     <link rel="stylesheet" href="/styles/importer.css">
-    <link rel="stylesheet" href="/styles/imports.css">
     <!--STYLES END-->
 
-    <script src="/js/facebook/FacebookClient.js"></script>
 
-    <!--
-      Client-side Templates
-      ======================== -->
-
+    <!-- ========================
+    Client-side Templates
+    ======================== -->
     <!--TEMPLATES-->
-    <script type="text/javascript" src="/jst.js"></script>
+    
     <!--TEMPLATES END-->
 
-    <!--
-      Client-side Javascript
-      ======================== -->
 
+    <!-- ========================
+    Client-side Javascript
+    ======================== -->
     <!--SCRIPTS-->
-    <script src="/js/dependencies/Socketer.js"></script>
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/Socketer.js"></script>
     <script src="/vendor/jquery/js/jquery.min.js"></script>
     <script src="/vendor/lodash/js/lodash.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendor/angular/angular.js"></script>
+    <script src="/vendor/angular-animate/angular-animate.js"></script>
+    <script src="/vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/vendor/ScrollIt/scrollIt.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/pageloader/index.js"></script>
-    <script src="/vendor/kazitori.js/kazitori.js"></script>
-    <script src="/js/routing/route.js"></script>
     <!--SCRIPTS END-->
-
-    <%-scripts%>
 
   </head>
 
-  <body>
-    <script>new Router()</script>
+  <body ng-controller="appCtrl">
 
-    <div id="fb-root"></div>
-    <!--<script src="/js/facebook/loading.js"></script>-->
+  <!-- Loading Kazitori.js routing -->
+  <!--<script>if(window["Router"]) new Router()</script>-->
+  <!-- Facebook Client -->
+  <!--<div id="fb-root"></div>-->
+  <!--<script src="/js/facebook/loading.js"></script>-->
 
-    <%-blocks.header_scripts%>
+  <%-blocks.header_scripts%>
 
-    <%- body %>
+  <%- body %>
 
-    <%-blocks.footer_scripts%>
+  <%-blocks.footer_scripts%>
 
   </body>
 </html>

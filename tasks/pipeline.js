@@ -15,6 +15,7 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
+  'vendor/font-awesome-animation/styles/font-awesome-animation.min.css',
   'styles/**/*.css'
 ];
 
@@ -22,31 +23,31 @@ var cssFilesToInject = [
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
-  
-  // Dependencies like sails.io.js, jQuery, or Angular
-  // are brought in here
+
+  // Load sails.io before everything else
+  'js/dependencies/sails.io.js',
+
   'js/dependencies/*.js',
 
-  //
-  // *->    you might put other dependencies like jQuery or Angular here   <-*
-  //
-  "vendor/jquery/js/jquery.min.js",
+  // Dependencies like jQuery, or Angular are brought in here
+  "vendor/jquery/**/jquery.min.js",
 
-  "vendor/lodash/js/lodash.min.js",
+  "vendor/lodash/**/*.js",
 
-//  "vendor/vue/js/*.js",
+  "vendor/bootstrap/js/bootstrap.min.js",
 
-  'js/dependencies/jquery/**/*.js',
+  "vendor/angular/**/*.js",
+
+  "vendor/angular*/**/*.js",
+
+  'js/dependencies/jquery-plugins/**/*.js',
+
+  "vendor/ScrollIt/scrollIt.js",
 
   "js/app.js",
 
-  "js/*.js",
+  "js/*.js"
 
-  "js/pageloader/**/*.js",
-
-  "vendor/kazitori.js/kazitori.js",
-
-  "js/routing/route.js"
 ];
 
 

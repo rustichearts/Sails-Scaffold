@@ -12,8 +12,8 @@
 
 module.exports = {
 
-  appName: "Sails Application",
-  	
+  appName: "Sails Scaffold Development",
+
   facebook: {
     appId: "111111"
   }

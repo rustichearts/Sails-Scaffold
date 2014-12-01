@@ -5,9 +5,13 @@
     "jquery": "~2.1.1",
     "font-awesome": "~4.1.0",
     "font-awesome-animation": "~0.0.5",
-    "bootstrap": "~3.2.0",
     "lodash": "~2.4.1",
-    "kazitori.js": "~1.0.3"
+    "kazitori.js": "~1.0.3",
+    "angular": "~1.2.25",
+    "angular-animate": "~1.2.25",
+    "bootstrap": "~3.3.1",
+    "angular-bootstrap": "~0.12.0",
+    "normalize.css": "~3.0.2"
   },
   "exportsOverride": {
     "jquery": {
@@ -18,15 +22,15 @@
     },
     "bootstrap": {
       "js": "dist/js/bootstrap.min.js",
-      "css": "dist/css/{bootstrap.min.css,bootstrap-theme.min.css}",
+      "styles": "dist/css/{bootstrap.min.css,bootstrap-theme.min.css}",
       "fonts": "dist/fonts/*.*"
     },
     "font-awesome": {
-      "css": "css/font-awesome.min.css",
+      "styles": "css/font-awesome.min.css",
       "fonts": "fonts/*.*"
     },
     "font-awesome-animation": {
-      "css": "dist/*.min.css"
+      "styles": "dist/*.min.css"
     }
   }
 }

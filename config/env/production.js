@@ -12,16 +12,16 @@
 
 module.exports = {
 
-  appName: "Sails Application",
+  appName: "Sails Scaffold",
 
-  port: process.env.PORT || 80,
+  port: process.env.PORT || 3000,
 
   environment: process.env.NODE_ENV || 'production',
 
   facebook: {
     appId: "111111"
   }
-  
+
   /***************************************************************************
    * Set the default database connection for models in the production        *
    * environment (see config/connections.js and config/models.js )           *
